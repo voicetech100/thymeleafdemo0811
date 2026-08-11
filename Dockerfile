@@ -20,7 +20,7 @@ WORKDIR /mytrymeleaf0811
 COPY --from=builder /mytrymeleaf0811/target/*.jar mytrymeleaf.jar
 
 # 容器啟動時執行 JAR，並明確指定使用 prod Profile
-ENTRYPOINT ["java", "-jar", "mytrymeleaf0811.jar"]
+ENTRYPOINT ["java", "-jar", "mytrymeleaf.jar"]
 
 # 宣告服務使用的 port（Render 預設讀取此值）
 EXPOSE 8900
