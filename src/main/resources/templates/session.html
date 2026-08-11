@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Session</title>
+</head>
+<body>
+<h1>
+
+<p th:text="${session['user']}">Session 資料</p>
+<p th:text="${#numbers.formatDecimal(price, 1, 2)}">價格</p>  <!-- numbers&dates是系統內定物件 -->
+<p th:text="${#dates.format(today, 'yyyy-MM-dd HH:mm:ss')}">日期</p>
+    <!-- 在Thymeleaf語法中，只要是以# 號開頭的物件，都是系統準備好的內建物件，不需要在後端model.addAttribute手動傳過去，網頁端就能直接拿來處理資料格式。 -->
+
+
+</h1>
+</body>
+</html>

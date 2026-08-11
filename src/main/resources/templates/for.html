@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}">預設標題</title>
+</head>
+<body>
+
+<table border="1">
+    <tr>
+        <th>序號</th>
+        <th>索引</th>
+        <th>ID</th>
+        <th>書名</th>
+        <th>價格</th>
+        <th>第一筆</th>
+        <th>最後一筆</th>
+    </tr>
+    <tr th:each="user, stat : ${users}">
+        <td th:text="${stat.count}">1</td>
+        <td th:text="${stat.index}">0</td>
+        <td th:text="${user.id}">ID</td>           <!-- ✅ 修正 -->
+        <td th:text="${user.bookName}">書名</td>   <!-- ✅ 修正 -->
+        <td th:text="${user.price}">價格</td>      <!-- ✅ 修正 -->
+        <td th:text="${stat.first}">是否第一筆</td>
+        <td th:text="${stat.last}">是否最後一筆</td>
+    </tr>
+</table>
+
+</body>
+</html>

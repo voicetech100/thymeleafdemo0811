@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">  <!-- thymeleaf框架多了這行字,若沒這行字為一般的html -->  
+<head>
+    <title th:text="${title}">預設標題</title>
+</head>
+<body>
+    <!-- Thymeleaf 內容 -->
+    <h1 th:text="${greeting}">   <!-- text只當成文字解讀 -->
+        Greeting : 
+    </h1>
+    <div th:utext="${htmlContent}">HTML 內容</div>  <!-- utext會解讀html語言 後端傳送到這個key "htmlContent" 兩邊需對應才行-->
+    <p th:text="|問候語, ${greeting}!|">你好</p> 
+</body>
+</html>
